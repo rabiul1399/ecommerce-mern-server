@@ -1,0 +1,14 @@
+# E-commerce MERN Stack project 
+
+## BAsic setup
+
+1 Couse plan 
+2 Envioronment setup 
+3 Express server setups = express
+4 HTTP request & response
+5 Nodemone and morgan package = nodemon, morgan
+6 Api teastin with postman
+7 Middeleware & Types of Middleware
+8 Express Error handling middleware = body-parser
+9 How to handle HTTP errors = http-errors
+10 Hot to secure API = xss-clean,express-rate-limit
