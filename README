@@ -15,3 +15,5 @@
 10 Hot to secure API = xss-clean,express-rate-limit
 11 Enviroment variable (.env) & .gitignore
 12 MVC Architecture
+13 Connect to MongoDb databse
+14 Schema & model for User = bcrypt.js
