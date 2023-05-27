@@ -30,7 +30,12 @@ app.use("/api/user", userRouter)
 
 app.get("/test", (req, res) => {
     res.status(200).send({
-        message: 'Api is working fine and she is a beautfyll'
+        message: 'Api is working fine and she is a beautfyll',
+        user:{
+            name: 'Rabiul',
+            home: 'mohadevpuer',
+            age: 23
+        }
     })
 })
 
