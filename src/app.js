@@ -8,8 +8,6 @@ const rateLimit = require('express-rate-limit');
 const userRouter = require('./routers/userRouter');
 
 
-
-
 // Main express pack export
 const app = express();
 
@@ -26,12 +24,11 @@ app.use(xssClean());
 app.use(morgan("dev"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
 app.use("/api/user", userRouter)
 
 
-
-
-app.get("/test", rateLimiter, (req, res) => {
+app.get("/test", (req, res) => {
     res.status(200).send({
         message: 'Api is working fine and she is a beautfyll'
     })

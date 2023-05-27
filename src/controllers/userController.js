@@ -1,14 +1,16 @@
 const createError = require('http-errors');
-const users = require('../models/userModule');
+const Users = require('../models/userModule');
+
 
 const getUser = (req, res,next) => {
   try {
-    console.log(req.body.id)
+    console.log(Users)
     res.status(200).send({
         message: 'This is very good api testing. User go to api calling',
-        users
+        user: Users,
     });
   } catch (error) {
+    
     next(error)
   }
 };
