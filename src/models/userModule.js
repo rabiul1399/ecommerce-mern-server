@@ -10,14 +10,12 @@ const userSchema = new Schema({
         minlength: [3, 'User name can be minimum 3 characters'],
         maxlength: [31, 'User name can be maximum 31 characters']
     },
-    emai: {
+    email: {
         type: String,
         required: [true, 'User email is required'],
         trim: true,
         unique: true,
         lowercase: true,
-
-
         validator: function (v) {
             return /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(v);
 
@@ -27,8 +25,7 @@ const userSchema = new Schema({
     password: {
         type: String,
         required: [true, 'User password is required'],
-        minlength: [6, 'Password can be minimum 3 characters'],
-        maxlength: [10, 'Password can be maximum 31 characters'],
+        minlength: [6, 'Password can be minimum 6 characters'],
         set: (v) => bcrypt.hashSync(v, bcrypt.genSaltSync(10)),
 
     },
@@ -56,6 +53,6 @@ const userSchema = new Schema({
 }, { timestamps: true }
 );
 
-const Users = model('Users', userSchema);
+const AllUser = model('AllUser', userSchema);
 
-module.exports = Users;
+module.exports = AllUser;

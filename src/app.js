@@ -6,6 +6,7 @@ const createError = require('http-errors');
 var xssClean = require('xss-clean')
 const rateLimit = require('express-rate-limit');
 const userRouter = require('./routers/userRouter');
+const seedRouter = require('./routers/seedRouter');
 
 
 // Main express pack export
@@ -26,16 +27,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use("/api/user", userRouter)
-
+app.use('/api/seed', seedRouter)
 
 app.get("/test", (req, res) => {
     res.status(200).send({
         message: 'Api is working fine and she is a beautfyll',
-        user:{
-            name: 'Rabiul',
-            home: 'mohadevpuer',
-            age: 23
-        }
+       
     })
 })
 

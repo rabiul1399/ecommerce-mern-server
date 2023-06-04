@@ -1,18 +1,19 @@
 const createError = require('http-errors');
-const Users = require('../models/userModule');
+const AllUser = require('../models/userModule');
 
 
-const getUser = (req, res,next) => {
+const getUser = async (req, res, next) => {
   try {
-    console.log(Users)
+    const users = await AllUser.find({})
+    console.log(users)
     res.status(200).send({
-        message: 'This is very good api testing. User go to api calling',
-        user: Users,
+      message: 'This is very good api testing. User go to api calling',
+      user: users,
     });
   } catch (error) {
-    
+
     next(error)
   }
 };
 
-module.exports = {getUser};
+module.exports = { getUser };
